@@ -9,6 +9,8 @@ import ContactForm from "./ContactForm";
 
 function Prices({ blok }) {
   const [commentField, setCommentField] = useState(0);
+ 
+
   const rows = [
     "tb1_all",
     "tb2_day",
@@ -31,9 +33,9 @@ function Prices({ blok }) {
   var acordionTitle1 = blok[rows[0]].tbody[0].body[0].value;
   var acordionTitle2 = blok[rows[0]].thead[1].value;
 
-  var countTicket = rows[0];
-  var countType = 0;
-  var countLesson = 1;
+  const [countTicket, setCountTicket] = useState(rows[0]);
+  const [countType, setCountType] = useState(0);
+  const [countLesson, setCountLesson] = useState(1);
 
 
   const router = useRouter();
@@ -70,7 +72,7 @@ function Prices({ blok }) {
                                 blok[rows[i]].tbody[0].body[0].value;
                               document.getElementById("btn-1").innerHTML =
                                 blok[rows[i]].tbody[1].body[0].value;
-                              countTicket = rows[i];
+                              setCountTicket(rows[i]);
                             }}
                           >
                             {blok[rows[i]].thead[0].value}
@@ -105,7 +107,7 @@ function Prices({ blok }) {
                     onClick={() => {
                       document.getElementById("p2").innerHTML =
                         blok[countTicket].tbody[0].body[0].value;
-                      countType = typeTicket[0];
+                        setCountType(typeTicket[0]);
                     }}
                   >
                     <span id="btn-0">{process.env.PRICE_TYPE[router.locale].first}</span>
@@ -119,7 +121,7 @@ function Prices({ blok }) {
                     onClick={() => {
                       document.getElementById("p2").innerHTML =
                         blok[countTicket].tbody[1].body[0].value;
-                      countType = typeTicket[1];
+                      setCountType(typeTicket[1]);
                     }}
                   >
                     <span id="btn-1">{process.env.PRICE_TYPE[router.locale].second}</span>
@@ -147,7 +149,7 @@ function Prices({ blok }) {
                         onClick={() => {
                           document.getElementById("p3").innerHTML =
                             lessonTicket[i];
-                          countLesson = i + 1;
+                          setCountLesson(i + 1);
                         }}
                       >
                         {lessonTicket[i]}

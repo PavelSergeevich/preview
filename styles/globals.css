@@ -80,6 +80,10 @@ svg {
   height: 28px;
 }
 
+sup {
+  padding-top: 0.5rem;
+}
+
 ul li {
   display: flex;
   align-items: center;
