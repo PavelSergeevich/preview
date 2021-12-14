@@ -7,13 +7,9 @@ import MapsFrame from "./MapsFrame";
 const Layout = ({ children, locale, locales, title, description }) => (
   <>
     <Head title="Dikardi" description="Pole Dance"/>
-    <div className="color-nav">
-      <Header locale={locale} locales={locales}  />     
-    </div>
-    <div className="max-size">{children}</div>    
-    <div className="color-foot">
+      <Header locale={locale} locales={locales} />  
+    {children}   
       <Footer locale={locale} locales={locales} />
-    </div>
     <MapsFrame/>
   </>
 );

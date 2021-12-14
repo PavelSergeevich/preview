@@ -8,9 +8,9 @@ const Footer = ({ locale, locales }) => {
   const defaultLocale = locale === "uk" ? "/" : `/${locale}/`;
 
   return (
-    <footer>
-      <div className="footer max-size">
-        <Container>
+    <footer className="footer">  
+    <div className="max-size">    
+        <Container className="footer-box">
           <Row className="row-footer">
             <Col xs={6} md={4} id="col-1">
               <div className="main-form">              
@@ -31,10 +31,10 @@ const Footer = ({ locale, locales }) => {
                   <sup>{process.env.FOOTER_PHONE_RESOLVE[locale]}</sup>
                 </li>
                 <li>
-                  <b className="h6">{process.env.FOOTER_PHONE[0]}</b>
+                  <a href={`tel:${process.env.FOOTER_PHONE[0]}`} className="h6" id="tel">{process.env.FOOTER_PHONE[0]}</a>
                 </li>
                 <li>
-                  <b className="h6">{process.env.FOOTER_PHONE[1]}</b>
+                  <a href={`tel:${process.env.FOOTER_PHONE[1]}`} className="h6" id="tel">{process.env.FOOTER_PHONE[1]}</a>
                 </li>
               </ul>
               </div>
@@ -51,7 +51,7 @@ const Footer = ({ locale, locales }) => {
             </Col>
           </Row>
         </Container>
-      </div>
+        </div>
     </footer>
   );
 };

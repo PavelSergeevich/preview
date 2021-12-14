@@ -1,47 +1,41 @@
-import React from "react";
+import React, { ReactDOM } from "react";
 import SbEditable from "storyblok-react";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
-import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { useRouter } from "next/router";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ContactForm from "./ContactForm";
 
 function Prices({ blok }) {
+  const [commentField, setCommentField] = useState(0);
   const rows = [
-    "Row",
-    "Row_1",
-    "Row_2",
-    "Row_3",
-    "Row_4",
-    "Row_5",
-    "Row_6",
-    "Row_7",
-  ];
-  const titles = [
-    "title",
-    "title_1",
-    "title_2",
-    "title_3",
-    "title_4",
-    "title_5",
-    "title_6",
-    "title_7",
+    "tb1_all",
+    "tb2_day",
+    "tb3_student_day",
+    "tb4_student",
+    "tb5_individual",
+    "tb6_family",
+    "tb7_single_option",
+    "tb8_other_option",
   ];
 
-  var acordionTitle = blok[titles[0]];
+  const typeTicket = [
+    0, 1
+  ];
+  const lessonTicket = [
+    4, 8, 12, 16, 20
+  ];
+
+  var acordionTitle = blok[rows[0]].thead[0].value;
   var acordionTitle1 = blok[rows[0]].tbody[0].body[0].value;
   var acordionTitle2 = blok[rows[0]].thead[1].value;
-  const btnStyle2 = {
-    width: "100%",
-    textAlign: "center",
-    fontSize: "32px",
-    color: "#a70000",
-  };
-  var countTicket = blok[rows[0]];
+
+  var countTicket = rows[0];
   var countType = 0;
   var countLesson = 1;
+
+
   const router = useRouter();
   const [show, setShow] = useState(false);
 
@@ -49,83 +43,20 @@ function Prices({ blok }) {
     <SbEditable content={blok}>
       <Container key={blok._uid}>
         <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={12} md={8}>
-            <Accordion flush>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <div>
-                    <sup>Тип абонементу</sup>
-                    <h4>
-                      <b id="p1">{acordionTitle}</b>
-                    </h4>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  {titles.map((item, i) => {
-                    if (titles[i] != "title_6") {
-                      if (titles[i] != "title_7") {
-                        return (
-                          <div className="bd-desc" key={item}>
-                            <button
-                              className="btn-blind"
-                              type="submit"
-                              data-toggle="collapse"
-                              onClick={() => {
-                                document.getElementById("p1").innerHTML =
-                                  blok[titles[i]];
-                                countTicket = blok[rows[i]];
-                              }}
-                            >
-                              {blok[titles[i]]}
-                            </button>
-                          </div>
-                        );
-                      }
-                    }
-                  })}
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header>
-                  <div>
-                    <sup>Вид абонементу</sup>
-                    <h4>
-                      <b id="p2">{acordionTitle1}</b>
-                    </h4>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  {blok.Row.tbody.map((item, i) => (
-                    <div className="bd-desc" key={item}>
-                      <button
-                        className="btn-blind"
-                        type="submit"
-                        data-toggle="collapse"
-                        onClick={() => {
-                          document.getElementById("p2").innerHTML =
-                            blok[rows[0]].tbody[i].body[0].value;
-                          countType = i;
-                        }}
-                      >
-                        {blok[rows[0]].tbody[i].body[0].value}
-                      </button>
-                    </div>
-                  ))}
-                </Accordion.Body>
-              </Accordion.Item>
-              <Accordion.Item eventKey="2">
-                <Accordion.Header>
-                  <div>
-                    <sup>Кількість занять</sup>
-                    <h4>
-                      <b id="p3">{acordionTitle2}</b>
-                    </h4>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body>
-                  {blok.Row.thead.map((item, i) => {
-                    if (blok[rows[0]].thead[i].value !== "")
+          <Accordion flush>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <div>
+                  <sup>{process.env.PRICE_FIELD[router.locale].ticket}</sup>
+                  <p className="h5">
+                    <b id="p1" style={{ textTransform: "uppercase" }}>{acordionTitle}</b>
+                  </p>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                {rows.map((item, i) => {
+                  if (i != 6) {
+                    if (i != 7) {
                       return (
                         <div className="bd-desc" key={item}>
                           <button
@@ -133,114 +64,185 @@ function Prices({ blok }) {
                             type="submit"
                             data-toggle="collapse"
                             onClick={() => {
-                              document.getElementById("p3").innerHTML =
-                                blok[rows[0]].thead[i].value;
-                              countLesson = i;
+                              document.getElementById("p1").innerHTML =
+                                blok[rows[i]].thead[0].value;
+                              document.getElementById("btn-0").innerHTML =
+                                blok[rows[i]].tbody[0].body[0].value;
+                              document.getElementById("btn-1").innerHTML =
+                                blok[rows[i]].tbody[1].body[0].value;
+                              countTicket = rows[i];
                             }}
                           >
-                            {blok[rows[0]].thead[i].value}
+                            {blok[rows[i]].thead[0].value}
                           </button>
                         </div>
                       );
-                  })}
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+                    }
+                  }
+                })}
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>
+                <div>
+                  <sup>{process.env.PRICE_FIELD[router.locale].type}</sup>
+
+                  <p className="h5">
+                    <b id="p2" style={{ textTransform: "uppercase" }}>
+                      {acordionTitle1}
+                    </b>
+                  </p>
+                </div>
+
+              </Accordion.Header>
+              <Accordion.Body>
+                <div className="bd-desc">
+                  <button
+                    id="btn-0"
+                    className="btn-blind"
+                    type="submit"
+                    data-toggle="collapse"
+                    onClick={() => {
+                      document.getElementById("p2").innerHTML =
+                        blok[countTicket].tbody[0].body[0].value;
+                      countType = typeTicket[0];
+                    }}
+                  >
+                    <span id="btn-0">{process.env.PRICE_TYPE[router.locale].first}</span>
+                  </button>
+                </div>
+                <div className="bd-desc">
+                  <button
+                    className="btn-blind"
+                    type="submit"
+                    data-toggle="collapse"
+                    onClick={() => {
+                      document.getElementById("p2").innerHTML =
+                        blok[countTicket].tbody[1].body[0].value;
+                      countType = typeTicket[1];
+                    }}
+                  >
+                    <span id="btn-1">{process.env.PRICE_TYPE[router.locale].second}</span>
+                  </button>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>
+                <div>
+                  <sup>{process.env.PRICE_FIELD[router.locale].count}</sup>
+                  <p className="h4">
+                    <b id="p3">{acordionTitle2}</b>
+                  </p>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body>
+                {lessonTicket.map((item, i) => {
+                  return (
+                    <div className="bd-desc" key={item}>
+                      <button
+                        className="btn-blind"
+                        type="submit"
+                        data-toggle="collapse"
+                        onClick={() => {
+                          document.getElementById("p3").innerHTML =
+                            lessonTicket[i];
+                          countLesson = i + 1;
+                        }}
+                      >
+                        {lessonTicket[i]}
+                      </button>
+                    </div>
+                  );
+                })}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </Row>
+        <Row>       
+          <Col>          
+            <div className="price-desc">
+              <sup>{blok[rows[6]].thead[0].value}</sup>
+              <br />
+              <b>{blok[rows[6]].thead[1].value}</b>
+            </div>           
+          </Col>         
+        </Row>
+        <Row>          
+          <Col xs={12} md={6}>   
+          <div className="price-desc">         
+              <sup>{blok[rows[6]].tbody[1].body[0].value}</sup>
+              <br />
+              <b>{blok[rows[6]].tbody[1].body[1].value + " " + "₴"}</b>
+              <br />
+              <b>{blok[rows[6]].tbody[2].body[1].value + " " + "₴"}</b>  
+              </div>                   
           </Col>
-          <Col xs={0} md={2}></Col>
+          <Col xs={12} md={6}>    
+          <div className="price-desc">        
+              <sup>{blok[rows[6]].tbody[3].body[0].value}</sup>
+              <br />
+              <b>{blok[rows[6]].tbody[3].body[1].value + " " + "₴"}</b>
+              <br />
+              <b>{blok[rows[6]].tbody[4].body[1].value + " " + "₴"}</b>  
+              </div>                    
+          </Col>               
+        </Row>
+        <Row>          
+          <Col xs={12} md={6}>
+          <div className="price-desc">
+              <sup>{blok[rows[6]].tbody[0].body[0].value}</sup>
+              <br />
+              <b>{blok[rows[6]].tbody[0].body[1].value + " " + "₴"}</b>
+           </div>
+          </Col>
+          <Col xs={12} md={6}>
+          <div className="price-desc">
+              <sup>{blok[rows[6]].tbody[5].body[0].value}</sup>
+              <br />
+              <b>{blok[rows[6]].tbody[5].body[1].value + " " + "₴"}</b>
+            </div>
+          </Col>              
+        </Row>      
+        <Row>
+          <div className="main-form">
+          <button
+            className="priceButton"
+            type="checkbox"
+            onClick={() => {
+              let sign;
+              if (blok[countTicket].tbody[countType].body[countLesson].value - parseInt(blok[countTicket].tbody[countType].body[countLesson].value) == 0) {
+                sign = "₴";
+                console.log(blok[countTicket].tbody[countType].body[countLesson].value);
+              } else { sign = " "; }
+              console.log(typeof blok[countTicket].tbody[countType].body[countLesson].value);
+              document.getElementById("p4").innerHTML =
+                blok[countTicket].tbody[countType].body[countLesson].value +
+                " " +
+                sign;
+              setCommentField(blok[countTicket].thead[0].value + ", " + blok[countTicket].tbody[countType].body[0].value + ", " + lessonTicket[countLesson - 1]);
+            }}
+          >
+            <h1 id="p4">0</h1>
+            <span className="h6" style={{ textTransform: "uppercase" }}>
+              {process.env.PRICE_COUNT[router.locale]}
+            </span>
+          </button>
+          </div>
         </Row>
         <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={12} md={8}>
-            <button
-              className="priceButton"
-              type="checkbox"              
-              onClick={() => {
-                document.getElementById("p4").innerHTML =
-                  countTicket.tbody[countType].body[countLesson].value +
-                  " " +
-                  "₴";
-              }}
-            >
-              <div className="">
-                <h1 id="p4">0</h1>
-                <h5 style={{ textTransform: "uppercase" }}>
-                  {process.env.PRICE_COUNT[router.locale]}
-                </h5>
-              </div>
-            </button>
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
-        <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={12} md={8}>
-            <div>
-              <sup>{blok.Row_6.tbody[0].body[0].value}</sup>
-              <br />
-              <b>{blok.Row_6.tbody[0].body[1].value}</b>
-            </div>
-            <hr />
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
-        <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={6} md={4}>
-            <div>
-              <sup>{blok.Row_6.tbody[2].body[0].value}</sup>
-              <br />
-              <b>{blok.Row_6.tbody[2].body[1].value + " " + "₴"}</b>
-              <br />
-              <b>{blok.Row_6.tbody[3].body[1].value + " " + "₴"}</b>
-            </div>
-            <hr />
-          </Col>
-          <Col xs={6} md={4}>
-            <div>
-              <sup>{blok.Row_6.tbody[4].body[0].value}</sup>
-              <br />
-              <b>{blok.Row_6.tbody[4].body[1].value + " " + "₴"}</b>
-              <br />
-              <b>{blok.Row_6.tbody[5].body[1].value + " " + "₴"}</b>
-            </div>
-            <hr />
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
-        <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={6} md={4}>
-            <div>
-              <sup>{blok.Row_6.tbody[1].body[0].value}</sup>
-              <br />
-              <b>{blok.Row_6.tbody[1].body[1].value + " " + "₴"}</b>
-            </div>
-          </Col>
-          <Col xs={6} md={4}>
-            <div>
-              <sup>{blok.Row_6.tbody[6].body[0].value}</sup>
-              <br />
-              <b>{blok.Row_6.tbody[6].body[1].value + " " + "₴"}</b>
-            </div>
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
-        <Row>
-          <Col xs={0} md={2}></Col>
-          <Col xs={12} md={8}>
-            <button
-              type="button"
-              className="btn-active mt-3 mb-3"
-              onClick={() => {
-                setShow(true);
-              }}
-            >
-              {blok.action_btn}
-            </button>
-          </Col>
-          <Col xs={0} md={2}></Col>
-        </Row>
+        <div className="main-form">
+          <button
+            type="button"
+            className="btn-active mt-3 mb-3"
+            onClick={() => {
+              setShow(true);
+            }}
+          >
+            {blok.btn_register}
+          </button>
+          </div>
+        </Row>      
         <Offcanvas show={show} onHide={() => setShow(false)}>
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
@@ -249,7 +251,9 @@ function Prices({ blok }) {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <div>
-              <ContactForm locale={router.locale} />{" "}
+              <ContactForm locale={router.locale}>
+                {commentField}
+              </ContactForm>{" "}
             </div>
           </Offcanvas.Body>
         </Offcanvas>

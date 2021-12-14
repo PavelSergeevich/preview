@@ -6,7 +6,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import ContactForm from "./ContactForm";
 
-const FeaturedPosts = ({ blok }) => {
+const DanceList = ({ blok }) => {
   const [show, setShow] = useState(false);
   const [count, setCount] = useState(0);
   const router = useRouter();
@@ -15,15 +15,15 @@ const FeaturedPosts = ({ blok }) => {
   return (
     <SbEditable content={blok} key={blok._uid}>
       <Container>
-        {blok.posts.map((post, key) => {
-          const lang = post.lang === "default" ? "/uk" : `/${post.lang}`;
-          danceForm[key] = post.content.title;
+        {blok.dances.map((dance, key) => {
+          const lang = dance.lang === "default" ? "/ru" : `/${dance.lang}`;
+          danceForm[key] = dance.content.title;
           return (
             <Row key={key}>
               <Col sm={12} md={6} lg={6}>
                 <img
                   className="img-fluid mx-auto d-block"
-                  src={post.content.image}
+                  src={dance.content.image.filename}
                 />
               </Col>
               <Col sm={12} md={6} lg={6}>
@@ -31,32 +31,28 @@ const FeaturedPosts = ({ blok }) => {
                   <ul className="list-unstyled">
                     <li>
                       <p className="text-muted">
-                        <small>{post.content.count}</small>
+                        <small>{dance.content.count}</small>
                       </p>
                     </li>
                     <li>
-                      <b className="h5">{post.content.title}</b>
+                      <b className="h5">{dance.content.title}</b>
                     </li>
                     <li>
                       <small id="intro">
                         <hr />
-                        {post.content.intro}
+                        {dance.content.description}
                       </small>
-                    </li>
-                    <li>
-                      <div className="btn-case">
-                        <button
+                    </li>                               
+                  </ul>                  
+                      <button
                           className="btn-active"
                           onClick={() => {
                             setCount(count + key);
                             setShow(true);
                           }}
                         >
-                          {post.content.link_btn}
-                        </button>
-                      </div>
-                    </li>
-                  </ul>
+                          {dance.content.btn_register}
+                      </button>                      
                 </div>
               </Col>
             </Row>
@@ -87,4 +83,4 @@ const FeaturedPosts = ({ blok }) => {
   );
 };
 
-export default FeaturedPosts;
+export default DanceList;

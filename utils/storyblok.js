@@ -19,7 +19,7 @@ export function useStoryblok(originalStory, preview, locale) {
     if (typeof StoryblokBridge !== "undefined") {
       // initialize the bridge with your token
       const storyblokInstance = new StoryblokBridge({
-        resolveRelations: ["featured-posts.posts", "selected-posts.posts"],
+        resolveRelations: ["dance-list.dances", "selected-dances.dances"],
         language: locale,
       });
 

@@ -22,17 +22,15 @@ const Hero = ({ blok }) => {
             />
           </Col>
           <Col xs={12} md={6} className="bd-desc">
-            <ul className="list-unstyled">
-              <li id="intro">
-                <div className="bd-desc">
+            <div className="bd-desc">
+              <ul className="list-unstyled">
+                <li id="intro">
                   <p className="lead">
                     <b>{blok.title}</b>
                     {blok.desc}
                   </p>
-                </div>
-              </li>
-              <li>
-                <div className="btn-case">
+                </li>
+                <li>
                   {blok.title === "Dikardi" ? (
                     <button
                       className="btn-active"
@@ -42,26 +40,28 @@ const Hero = ({ blok }) => {
                     >
                       {blok.btn_link}
                     </button>
-                  ) : (<a href={blok.link.cached_url}>
-                    <button className="btn-blind">                     
-                        {blok.btn_link}                     
-                    </button>
+                  ) : (
+                    <a
+                      className="btn-blind"
+                      href={blok.link.cached_url}
+                    >
+                      {blok.btn_link}
                     </a>
                   )}
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </Col>
         </Row>
         <Offcanvas show={show} onHide={() => setShow(false)}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>{process.env.CONTACT_FORM_HEADER[router.locale]}</Offcanvas.Title>
+            <Offcanvas.Title>
+              {process.env.CONTACT_FORM_HEADER[router.locale]}
+            </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
             <div>
-            <ContactForm locale={router.locale}>
-              
-                </ContactForm>
+              <ContactForm locale={router.locale}></ContactForm>
             </div>
           </Offcanvas.Body>
         </Offcanvas>

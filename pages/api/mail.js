@@ -15,14 +15,12 @@ export default function (req, res) {
     secure: true,
   })
   const mailData = {
-    from: 'test@dikardi.ua',
+    from: 'mail.dikardi@gmail.com',
     to: 'pasha.dubinka@gmail.com',
-    subject: `Message From ${req.body.name}`,
-    text: req.body.message + " | Email: " + req.body.email,
-    html: `<div>${req.body.message}</div><p>Sent from:
-    ${req.body.email}</p><p>${process.env.CONTACT_FORM_PHONE}: ${req.body.phone}</p>`
+    subject: `Новая запись от ${req.body.name}`,
+    html: `<p>${process.env.CONTACT_FORM_PHONE}: ${req.body.phone}</p><div>Комментарий: ${req.body.message}</div>`,
   }
-  transporter.sendMail(mailData, function (err, info) {
+  transporter.sendMail(mailData, function (err, info) { 
     if(err)
       console.log(err)
       

@@ -155,7 +155,7 @@ function ContactForm({ locale, children }) {
               </Col>
             </Row>
             <Row className="p-2">
-              <Col xs="auto" className="mb-2">
+              <Col xs="auto">
                 <label htmlFor="message">{blokContact.message + " "}</label>
               </Col>
               <Col xs>

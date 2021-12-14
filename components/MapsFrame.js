@@ -5,6 +5,7 @@ function MapsFrame() {
       style={{ width: "100%", height: "20%" }}
       allowFullScreen=""
       loading="lazy"
+      className="iframe-box"
     ></iframe>
   );
 }

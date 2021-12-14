@@ -24,7 +24,7 @@ export async function getStaticProps({ locale, locales, params, preview = false 
 
   let sbParams = {
     version: "draft", // or 'draft'
-    resolve_relations: ["featured-posts.posts", "selected-posts.posts"],
+    resolve_relations: ["dance-list.dances", "selected-dances.dances"],
     language: locale,
   }
  

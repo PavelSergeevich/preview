@@ -1,17 +1,19 @@
 import Hero from './Hero'
-import FeaturedPosts from './FeaturedPosts'
 import Placeholder from './Placeholder'
 import Page from './Page'
-import Table from './Table'
 import Prices from './Prices'
+import Schedule from './Schedule'
+import DanceList from './DanceList'
+import Dance from './Dance'
 
 
 const Components = {
   'hero': Hero, 
-  'featured-posts': FeaturedPosts,
   'page': Page, 
-  'table': Table,
-  'prices': Prices
+  'prices': Prices,
+  'schedule': Schedule,
+  'dance-list': DanceList,
+  'dance': Dance,
 }
 
 const DynamicComponent = ({ blok }) => {

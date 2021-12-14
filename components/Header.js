@@ -9,15 +9,16 @@ const Header = ({ locale, locales }) => {
 
   const defaultLocale = locale === "ru" ? "/" : `/${locale}/`;
 
-  return (
-    <div className="max-size">
-      <Container className="p-0 m-0">
+  return (   
+    <header className="color-nav">
+      <div className="header-box">
+      <Container>
         <Row className="nav nav-lang">
           <Col xs="auto" id="nav-lang-left" className="p-0 m-0 nav-item">
             {router.asPath == "/" || router.asPath == `/${locale}` ? (
               <> </>
             ) : (
-              <HomeArrow />
+              <HomeArrow props={`/${locale}`}/>
             )}
           </Col>
           <Col xs className="p-0 m-0 nav-item"></Col>
@@ -32,7 +33,7 @@ const Header = ({ locale, locales }) => {
               {locales.map((loc, i) => {
                 return (
                   <NavDropdown.Item
-                    href={`/${loc}`}
+                    href={`/${loc + router.asPath}`}
                     key={loc}
                     style={{ textAlign: "center" }}
                   >
@@ -44,7 +45,8 @@ const Header = ({ locale, locales }) => {
           </Col>
         </Row>
       </Container>
-    </div>
+      </div> 
+      </header>   
   );
 };
 
