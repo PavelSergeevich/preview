@@ -1,5 +1,4 @@
 var clientUser = process.env.CLIENT_USER;
-console.log('user', clientUser);
 
 export default function (req, res) {
 
