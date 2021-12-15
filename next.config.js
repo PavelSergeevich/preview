@@ -5,7 +5,7 @@ module.exports = {
     defaultLocale: "ru",
   },
   reactStrictMode: true,
-  env: {
+  env: {   
     CONTACT_FORM_HEADER: { ru: "Форма записи", uk: "Форма запису" },
     CONTACT_FORM_NAME: { ru: "Имя", uk: "Ім'я" },
     CONTACT_NAME: { ru: "Ваше имя", uk: "Ваше ім'я" },
@@ -32,16 +32,24 @@ module.exports = {
       uk: "UA",
     },
     PRICE_FIELD: {
-      ru: {ticket: "Тип абонемента", type: "Вид абонемента", count: "Количество занятий"},
-      uk: {ticket: "Тип абонементу", type: "Вид абонемента", count: "Кількість занять"},
+      ru: {
+        ticket: "Тип абонемента",
+        type: "Вид абонемента",
+        count: "Количество занятий",
+      },
+      uk: {
+        ticket: "Тип абонементу",
+        type: "Вид абонемента",
+        count: "Кількість занять",
+      },
     },
     PRICE_TYPE: {
-      ru: { first: "фиксированный", second: "свободный"},
-      uk: { first: "фіксований", second: "вільний"},
+      ru: { first: "фиксированный", second: "свободный" },
+      uk: { first: "фіксований", second: "вільний" },
     },
     PRICE_COUNT: {
       ru: "Рассчитать стоимость",
       uk: "Розрахувати вартість",
-    }
+    },
   },
 };

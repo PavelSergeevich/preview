@@ -1,8 +1,9 @@
+var clientUser = process.env.CLIENT_USER;
+console.log('user', clientUser);
+
 export default function (req, res) {
-  require("dotenv").config();
 
   let nodemailer = require("nodemailer");
-  const xoauth2 = require("xoauth2");
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -11,7 +12,7 @@ export default function (req, res) {
     service: "gmail",
     auth: {
       type: "OAuth2",
-      user: process.env.USER,
+      user: clientUser,
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       refreshToken: process.env.REFRESH_TOKEN,
