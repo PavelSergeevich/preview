@@ -19,6 +19,12 @@ const Footer = ({ locale, locales }) => {
                   <sup>{process.env.FOOTER_ADRESS_RESOLVE[locale]}</sup>
                 </li>
                 <li>
+                  <b className="h6">{process.env.FOOTER_CITY[locale]}</b>
+                </li>
+                <li>
+                  <b className="h6">{process.env.FOOTER_UNG[locale]}</b>
+                </li>
+                <li>
                   <b className="h6">{process.env.FOOTER_ADRESS[locale]}</b>
                 </li>
               </ul>
