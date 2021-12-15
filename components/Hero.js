@@ -30,7 +30,7 @@ const Hero = ({ blok }) => {
                     {blok.desc}
                   </p>
                 </li>
-                <li>
+                <li id="button">
                   {blok.title === "Dikardi" ? (
                     <button
                       className="btn-active"

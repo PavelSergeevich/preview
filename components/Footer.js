@@ -12,7 +12,7 @@ const Footer = ({ locale, locales }) => {
     <div className="max-size">    
         <Container className="footer-box">
           <Row className="row-footer">
-            <Col xs={6} md={4} id="col-1">
+            <Col xs={12} md={4} id="col-1">
               <div className="main-form">              
               <ul className="list-unstyled">
                 <li>
@@ -24,7 +24,7 @@ const Footer = ({ locale, locales }) => {
               </ul>
               </div>
             </Col>
-            <Col xs={6} md={4} id="col-2">
+            <Col xs={12} md={4} id="col-2">
             <div className="main-form"> 
               <ul className="list-unstyled">
                 <li>
@@ -39,14 +39,14 @@ const Footer = ({ locale, locales }) => {
               </ul>
               </div>
             </Col>
-            <Col xs={3} md={1} className="main-form" id="col-3"></Col>
-            <Col xs={3} md={1} className="main-form" id="col-4">
+            
+            <Col xs={4} md={1} className="main-form" id="col-4">
               <Maps />
             </Col>
-            <Col xs={3} md={1} className="main-form" id="col-5">
+            <Col xs={4} md={1} className="main-form" id="col-5">
               <Viber />
             </Col>
-            <Col xs={3} md={1} className="main-form" id="col-6">
+            <Col xs={4} md={1} className="main-form" id="col-6">
               <Telegram />
             </Col>
           </Row>

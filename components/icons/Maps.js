@@ -1,8 +1,9 @@
 function Maps() {
   const link =
     "https://www.google.com/maps/place/%D0%A3%D0%BD%D1%96%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%D1%81%D1%8C%D0%BA%D0%B0+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F,+31,+%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2,+%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+61000/@49.9871313,36.2283082,17z/data=!3m1!4b1!4m5!3m4!1s0x4127a0f6bd87b4a7:0x63cf98bac6d949f2!8m2!3d49.9871313!4d36.2304969";
+  const linkPage = "https://g.page/r/CSXGcrxfaK9xEAE";  
   return (
-    <a href={link} target="_blank" rel="noreferrer" className="fa map-icon">
+    <a href={linkPage} target="_blank" rel="noreferrer" className="fa map-icon">
       <svg
         version="1.2"
         baseProfile="tiny-ps"

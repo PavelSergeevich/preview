@@ -1,13 +1,14 @@
-import React from 'react'
-import NextHead from 'next/head'
+import React from "react";
+import NextHead from "next/head";
 
-const Head = ({ title, description }) => (
-  <NextHead>
-    <meta charSet="UTF-8" />
-    <title>{title || ''}</title>
-    <meta name="description" content={description || ''} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </NextHead>
+const Head = ({ title, description }) => (  
+    <NextHead>
+      <meta charSet="UTF-8" />
+      <title>{title || ""}</title>
+      <meta name="description" content={description || ""} />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="google-site-verification" content="3oun9ZZztq5VpDD1Lp73V5qsF3JZh1ah47vVOq3j9FM" />
+    </NextHead>
 )
 
-export default Head
+export default Head;

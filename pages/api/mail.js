@@ -1,33 +1,33 @@
 export default function (req, res) {
-  require('dotenv').config()
-  const USER = process.env.user
-  const PASSWORD = process.env.password
+  require("dotenv").config();
 
-  
-  let nodemailer = require('nodemailer')
+  let nodemailer = require("nodemailer");
+  const xoauth2 = require("xoauth2");
+
   const transporter = nodemailer.createTransport({
-    port: 465,
     host: "smtp.gmail.com",
-    auth: {
-      user: process.env.user,
-      pass: process.env.password,
-    },
+    port: 465,
     secure: true,
-  })
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.USER,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN,
+      accessToken: process.env.ACCESS_TOKEN,
+      expires: 1484314697598,
+    },
+  });
   const mailData = {
-    from: 'mail.dikardi@gmail.com',
-    to: 'pasha.dubinka@gmail.com',
+    from: "Mail Dikardi <mail.dikardi@gmail.com>",
+    to: process.env.MAIL_TO,
     subject: `Новая запись от ${req.body.name}`,
     html: `<p>${process.env.CONTACT_FORM_PHONE}: ${req.body.phone}</p><div>Комментарий: ${req.body.message}</div>`,
-  }
-  transporter.sendMail(mailData, function (err, info) { 
-    if(err)
-      console.log(err)
-      
-    else
-      console.log(info)
-  })
-  res.status(200)
-
-  
+  };
+  transporter.sendMail(mailData, function (err, info) {
+    if (err) console.log(err);
+    else console.log(info);
+  });
+  res.status(200);
 }

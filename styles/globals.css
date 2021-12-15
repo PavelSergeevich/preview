@@ -91,6 +91,10 @@ ul li {
   text-align: left;
 }
 
+ul li#button {  
+  justify-content: center;  
+}
+
 ul li small#intro {
   color: #707070;
 }
@@ -275,7 +279,7 @@ ul li small#intro {
   background-color: #31a8dc;
   border: 2px solid #147ba8;
 }
-
+/*
 #col-1 {
   order: 1;
 }
@@ -299,7 +303,7 @@ ul li small#intro {
 #col-6 {
   order: 6;
 }
-
+*/
 @media screen and (min-width: 1024px) {
  
 }
@@ -308,6 +312,7 @@ ul li small#intro {
   main {  
     max-width: 744px;
   }
+  /*
   #col-1 {
     order: 3;
   }
@@ -326,12 +331,14 @@ ul li small#intro {
   #col-5 {
     order: 6;
   } 
+  */
 }
 
 @media screen and (min-width: 425px) and (max-width: 767px) {
   main{  
     max-width: 480px;
   }
+  /*
   #col-1 {
     order: 2;
   }
@@ -347,12 +354,13 @@ ul li small#intro {
   #col-7 {
     order: 4;
   }
-  
+  */
 }
 @media screen and (max-width: 424px) {
   main {  
     max-width: 350px;
   }
+  /*
   #col-1 {
     order: 2;
   }
@@ -368,7 +376,7 @@ ul li small#intro {
   #col-7 {
     order: 4;
   }
- 
+ */
 }
 
 .redError {
