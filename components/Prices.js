@@ -72,6 +72,8 @@ function Prices({ blok }) {
                                 blok[rows[i]].tbody[0].body[0].value;
                               document.getElementById("btn-1").innerHTML =
                                 blok[rows[i]].tbody[1].body[0].value;
+                              document.getElementById("p2").innerHTML =
+                                blok[rows[i]].tbody[0].body[0].value;
                               setCountTicket(rows[i]);
                             }}
                           >
@@ -205,7 +207,21 @@ function Prices({ blok }) {
               <b>{blok[rows[6]].tbody[5].body[1].value + " " + "₴"}</b>
             </div>
           </Col>              
-        </Row>      
+        </Row>    
+        <Row>       
+          <Col>          
+            <div className="price-desc">
+              <b>{blok.tb9_commission}</b>
+            </div>           
+          </Col>         
+        </Row>
+        <Row>       
+          <Col>          
+            <div className="price-desc">
+              <b>{blok.note}</b>
+            </div>           
+          </Col>         
+        </Row>
         <Row>
           <div className="main-form">
           <button
