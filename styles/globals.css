@@ -95,6 +95,10 @@ ul li#button {
   justify-content: center;  
 }
 
+ul li#footer {  
+  justify-content: center;  
+}
+
 ul li small#intro {
   color: #707070;
 }

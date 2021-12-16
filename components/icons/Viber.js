@@ -1,7 +1,7 @@
 function Viber() {
   return (
     <a
-      href="viber://chat?number=+380951870180"
+      href="viber://chat?number=380951870180"
       target="_blank"
       rel="noreferrer"
       className="fa viber-icon"

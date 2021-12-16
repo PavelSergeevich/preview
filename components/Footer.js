@@ -21,7 +21,7 @@ const Footer = ({ locale, locales }) => {
                 <li>
                   <b className="h6">{process.env.FOOTER_CITY[locale]}</b>
                 </li>
-                <li>
+                <li id="footer">
                   <b className="h6">{process.env.FOOTER_UNG[locale]}</b>
                 </li>
                 <li>
