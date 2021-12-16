@@ -96,7 +96,8 @@ ul li#button {
 }
 
 ul li#footer {  
-  justify-content: center;  
+  justify-content: center; 
+  text-align: center; 
 }
 
 ul li small#intro {
