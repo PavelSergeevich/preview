@@ -7,7 +7,7 @@ const Page = ({ blok }) => (
     <Script
       async
       id="global-new"
-      src="https://www.googletagmanager.com/gtag/js?id=G-L3M7YL6FVR"
+      src="https://www.googletagmanager.com/gtag/js?id=G-EV1NGRY6WT"
     />
     <Script
       async
