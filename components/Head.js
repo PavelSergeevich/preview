@@ -19,6 +19,21 @@ const Head = ({ title, description }) => (
         })(window,document,'script','dataLayer','GTM-52Z565Q');`,
       }}
     />
+    <Script
+      async
+      id="global"
+      src="https://www.googletagmanager.com/gtag/js?id=AW-1002121066"
+    />
+    <Script
+      id="google-global"
+      dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'AW-1002121066');`,
+      }}
+    />    
     <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone.png"></link>
     </NextHead>
 )

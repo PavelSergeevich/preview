@@ -6,6 +6,7 @@ const Page = ({ blok }) => (
   <SbEditable content={blok}>
     <noscript>
       <iframe
+        title="global-tag"
         src="https://www.googletagmanager.com/ns.html?id=GTM-52Z565Q"
         height="0"
         width="0"
@@ -13,31 +14,9 @@ const Page = ({ blok }) => (
       ></iframe>
     </noscript>
     <Script
-      async
-      id="global-new"
-      src="https://www.googletagmanager.com/gtag/js?id=G-EV1NGRY6WT"
-    />
-    <Script
-      async
-      id="global"
-      src="https://www.googletagmanager.com/gtag/js?id=AW-1002121066"
-    />
-    <Script
-      id="global-tag"
-      dangerouslySetInnerHTML={{
-        __html: `${blok.script_global}`,
-      }}
-    />
-    <Script
       id="fb-pixel"
       dangerouslySetInnerHTML={{
         __html: `${blok.script_fb}`,
-      }}
-    />
-    <Script
-      id="global-in"
-      dangerouslySetInnerHTML={{
-        __html: `${blok.script_fb_ns}`,
       }}
     />
     <noscript>
@@ -46,6 +25,7 @@ const Page = ({ blok }) => (
         width="1"
         style={{ display: "none" }}
         src="https://www.facebook.com/tr?id=1049503675834921&ev=PageView&noscript=1"
+        alt="fb-pixel"
       />
     </noscript>
     <Script
