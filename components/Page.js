@@ -4,6 +4,14 @@ import Script from "next/script";
 
 const Page = ({ blok }) => (
   <SbEditable content={blok}>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-52Z565Q"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
     <Script
       async
       id="global-new"
@@ -36,7 +44,7 @@ const Page = ({ blok }) => (
       <img
         height="1"
         width="1"
-        style={{display:'none'}}
+        style={{ display: "none" }}
         src="https://www.facebook.com/tr?id=1049503675834921&ev=PageView&noscript=1"
       />
     </noscript>
