@@ -6,6 +6,7 @@ function Instagram() {
       href="https://www.instagram.com/dikardi_kharkov"
       target="_blank"
       rel="noreferrer"
+      aria-label="Instagram"
     >
       <svg
         version="1.2"

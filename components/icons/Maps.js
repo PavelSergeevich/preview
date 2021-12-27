@@ -11,6 +11,7 @@ function Maps() {
         viewBox="0 0 42 56"
         width="35"
         height="35"
+        aria-label="Maps"
       >
         <g id="home">
           <g id="down">

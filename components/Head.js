@@ -19,6 +19,7 @@ const Head = ({ title, description }) => (
         })(window,document,'script','dataLayer','GTM-52Z565Q');`,
       }}
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone.png"></link>
     </NextHead>
 )
 

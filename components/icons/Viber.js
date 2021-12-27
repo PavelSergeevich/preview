@@ -5,6 +5,7 @@ function Viber() {
       target="_blank"
       rel="noreferrer"
       className="fa viber-icon"
+      aria-label="Viber"
     >
       <svg
         version="1.2"

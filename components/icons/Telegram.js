@@ -5,6 +5,7 @@ function Telegram() {
       target="_blank"
       rel="noreferrer"
       className="fa telegram-icon"
+      aria-label="Telegram"
     >
       <svg
         version="1.2"

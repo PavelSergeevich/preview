@@ -40,7 +40,7 @@ const Footer = ({ locale, locales }) => {
                   <a href={`tel:${process.env.FOOTER_PHONE[0]}`} className="h6" id="tel">{process.env.FOOTER_PHONE[0]}</a>
                 </li>
                 <li>
-                  <a href={`tel:${process.env.FOOTER_PHONE[1]}`} className="h6" id="tel">{process.env.FOOTER_PHONE[1]}</a>
+                  <a href={`tel:${process.env.FOOTER_PHONE[1]}`} className="h6" id="tel-mob">{process.env.FOOTER_PHONE[1]}</a>
                 </li>
               </ul>
               </div>

@@ -5,6 +5,7 @@ function HomeArrow({ props }) {
       className="nav-link"
       aria-current="page"
       href={`${props}`}
+      aria-label="Back to home page"
     >
       <svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 64" width="37" height="64">
 	<title>Home</title>	

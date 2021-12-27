@@ -20,6 +20,7 @@ const Dance = ({ blok }) => {
                 <img
                   className="img-fluid mx-auto d-block"
                   src={blok.image.filename}
+                  alt={blok.image.alt}
                 />
               </Col>
               <Col sm={12} md={6} lg={6}>

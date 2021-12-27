@@ -15,7 +15,7 @@ main, .header-box {
   box-sizing: border-box;
 }
 
-a#tel {
+a#tel, a#tel-mob {
 color: #fafafa !important;
 text-decoration: none !important;
 }
