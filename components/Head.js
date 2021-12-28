@@ -21,7 +21,7 @@ const Head = ({ title, description }) => (
     />
     <Script
       async
-      id="global"
+      id="global-aw"
       src="https://www.googletagmanager.com/gtag/js?id=AW-1002121066"
     />
     <Script

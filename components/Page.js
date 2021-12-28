@@ -4,9 +4,14 @@ import Script from "next/script";
 
 const Page = ({ blok }) => (
   <SbEditable content={blok}>
+    <Script
+      async
+      id="global"
+      src="https://www.googletagmanager.com/gtag/js?id=G-L3M7YL6FVR"
+    />
     <noscript>
       <iframe
-        title="global-tag"
+        title="tag-manager"
         src="https://www.googletagmanager.com/ns.html?id=GTM-52Z565Q"
         height="0"
         width="0"
@@ -19,6 +24,18 @@ const Page = ({ blok }) => (
         __html: `${blok.script_fb}`,
       }}
     />
+    <Script
+      id="global-new"
+      dangerouslySetInnerHTML={{
+        __html: `${blok.script_fb_ns}`,
+      }}
+    />
+     <Script
+      id="event-tag"
+      dangerouslySetInnerHTML={{
+        __html: `${blok.script_event}`,
+      }}
+    />
     <noscript>
       <img
         height="1"
@@ -27,13 +44,7 @@ const Page = ({ blok }) => (
         src="https://www.facebook.com/tr?id=1049503675834921&ev=PageView&noscript=1"
         alt="fb-pixel"
       />
-    </noscript>
-    <Script
-      id="event-tag"
-      dangerouslySetInnerHTML={{
-        __html: `${blok.script_event}`,
-      }}
-    />
+    </noscript>   
     <main>
       {blok.body
         ? blok.body.map((blok) => (
