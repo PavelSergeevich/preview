@@ -10,12 +10,13 @@ const Head = ({ title, description }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="google-site-verification" content="3oun9ZZztq5VpDD1Lp73V5qsF3JZh1ah47vVOq3j9FM" />      
     <Script
-      async
       id="site-tag-aw"
+      strategy="afterInteractive"
       src="https://www.googletagmanager.com/gtag/js?id=AW-1002121066"
     />
     <Script
       id="site-tag"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -26,17 +27,19 @@ const Head = ({ title, description }) => (
     />
     <Script
       id="event-snippet"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `gtag('event', 'conversion', {'send_to': 'AW-1002121066/XCOaCOfutGAQ6s7s3QM'});`,
       }}
     />
     <Script
-      async
       id="site-tag-analytics"
+      strategy="afterInteractive"
       src="https://www.googletagmanager.com/gtag/js?id=G-L3M7YL6FVR"
     />
     <Script
       id="site-tag-gtag"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -46,6 +49,7 @@ const Head = ({ title, description }) => (
     />
     <Script
       id="facebook-pixel"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -58,6 +62,7 @@ const Head = ({ title, description }) => (
     />  
     <Script
       id="tag-manager"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
