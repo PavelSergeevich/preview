@@ -8,7 +8,8 @@ const Head = ({ title, description }) => (
       <title>{title || ""}</title>
       <meta name="description" content={description || ""} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="google-site-verification" content="3oun9ZZztq5VpDD1Lp73V5qsF3JZh1ah47vVOq3j9FM" />      
+      <meta name="google-site-verification" content="3oun9ZZztq5VpDD1Lp73V5qsF3JZh1ah47vVOq3j9FM" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone.png"></link>      
     <Script
       id="site-tag-aw"
       strategy="afterInteractive"
@@ -70,8 +71,24 @@ const Head = ({ title, description }) => (
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-52Z565Q');`,
       }}
-    />    
-    <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone.png"></link>
+    /> 
+    <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-52Z565Q"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+    </noscript>
+
+    <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=1049503675834921&ev=PageView&noscript=1"
+          />           
+    </noscript>   
     </NextHead>
 )
 
