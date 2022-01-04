@@ -4,8 +4,8 @@ import Script from "next/script";
 
 const Page = ({ blok }) => (
   <SbEditable content={blok}>
-    <noscript
-      dangerouslySetInnerHTML={() => {
+    <noscript>{
+      () => {
         return (
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-52Z565Q"
@@ -13,22 +13,23 @@ const Page = ({ blok }) => (
             width="0"
             style="display:none;visibility:hidden"
           ></iframe>
-        );
-      }}
-    ></noscript>
+        )
+      }
+      }</noscript>
 
-    <noscript
-      dangerouslySetInnerHTML={() => {
+    <noscript>{
+      () => {
         return (
           <img
             height="1"
             width="1"
             style="display:none"
             src="https://www.facebook.com/tr?id=1049503675834921&ev=PageView&noscript=1"
-          />
-        );
-      }}
-    ></noscript>
+          /> 
+          )
+        }
+        }
+    </noscript>
 
     <main>
       {blok.body
