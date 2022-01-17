@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    domains: ['a.storyblok.com'],
+  },
   i18n: {
     localeDetection: true,
     locales: ["ru", "uk"],

@@ -179,6 +179,26 @@ ul li small#intro {
   overflow: hidden;
   text-decoration: none !important;
 }
+
+
+.btn-blind a {
+  color: #a70000;
+  text-decoration: none !important;
+}
+
+.btn-active a {
+  color: white;
+  text-decoration: none !important;
+}
+
+.btn-active a:hover {
+  color: #f5eaea;
+}
+
+.btn-blind a:hover {
+  color: #c90000;
+}
+
 .btn-active:hover {
   opacity: 0.9;
   box-shadow: 0 4px 8px 0 #a7000031, 0 6px 20px 0 #a700002c;
