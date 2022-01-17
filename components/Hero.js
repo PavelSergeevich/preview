@@ -5,10 +5,13 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import ContactForm from "./ContactForm";
+import Alert from "react-bootstrap/Alert";
 
 const Hero = ({ blok }) => {
   const router = useRouter();
   const [show, setShow] = useState(false);
+
+  const [showAlert, setShowAlert] = useState(true);
 
   return (
     <SbEditable content={blok}>
@@ -41,16 +44,38 @@ const Hero = ({ blok }) => {
                       {blok.btn_link}
                     </button>
                   ) : (
-                    <a
-                      className="btn-blind"
-                      href={blok.link.cached_url}
-                    >
+                    <a className="btn-blind" href={blok.link.cached_url}>
                       {blok.btn_link}
                     </a>
                   )}
                 </li>
+                <li id="button-pay">
+                  {!showAlert ? (
+                    <button
+                      className="btn-blind"
+                      onClick={() => {
+                        setShowAlert(true);
+                      }}
+                    >
+                      {blok.btn_alert}
+                    </button>
+                  ) : (
+                    <></>
+                  )}
+                </li>
               </ul>
             </div>
+            {(blok.alert !== "") & showAlert ? (
+              <Alert
+                variant="info"
+                onClose={() => setShowAlert(false)}
+                dismissible
+              >
+                <p>{blok.alert}</p>
+              </Alert>
+            ) : (
+              <></>
+            )}
           </Col>
         </Row>
         <Offcanvas show={show} onHide={() => setShow(false)}>

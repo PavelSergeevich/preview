@@ -80,6 +80,18 @@ svg {
   height: 28px;
 }
 
+.card-visa, .card-mc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  border: solid 1px rgba(128, 128, 128, 0.445);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem auto 1rem auto;
+  width: 70%;
+}
+
 sup {
   padding-top: 0.5rem;
 }
@@ -91,7 +103,7 @@ ul li {
   text-align: left;
 }
 
-ul li#button {  
+ul li#button, ul li#button-pay {  
   justify-content: center;  
 }
 
@@ -165,10 +177,12 @@ ul li small#intro {
   width: 90%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
+  text-decoration: none !important;
 }
 .btn-active:hover {
   opacity: 0.9;
   box-shadow: 0 4px 8px 0 #a7000031, 0 6px 20px 0 #a700002c;
+  color: #f5eaea;
 }
 
 .btn-blind:hover {
@@ -183,6 +197,7 @@ ul li small#intro {
   margin-left: auto;
   margin-right: auto;
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   overflow: hidden;
 }
 
@@ -240,6 +255,10 @@ ul li small#intro {
   overflow: hidden;
 }
 
+.main-form#price {
+  padding-bottom: 1rem;
+}
+
 .main-form ul li sup{
   padding-bottom: 1rem;
 }
@@ -284,104 +303,61 @@ ul li small#intro {
   background-color: #31a8dc;
   border: 2px solid #147ba8;
 }
-/*
-#col-1 {
-  order: 1;
-}
 
-#col-2 {
-  order: 2;
-}
-
-#col-3 {
-  order: 3;
-}
-
-#col-4 {
-  order: 4;
-}
-
-#col-5 {
-  order: 5;
-}
-
-#col-6 {
-  order: 6;
-}
-*/
 @media screen and (min-width: 1024px) {
- 
+  #box-4 {
+    order: 1;
+  }
+  #box-1 {
+    order: 2;
+  }
+  #box-2 {
+    order: 3;
+  }
+  #box-3 {
+    order: 4;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   main {  
     max-width: 744px;
   }
-  /*
-  #col-1 {
-    order: 3;
-  }
-  #col-2 {
-    order: 6;
-  }
-  #col-3 {
-    order: 2;
-  }
-  #col-4 {
+  #box-4 {
     order: 1;
   }
-  #col-6 {
-    order: 7;
+  #box-1 {
+    order: 2;
   }
-  #col-5 {
-    order: 6;
-  } 
-  */
+  #box-2 {
+    order: 3;
+  }
+  #box-3 {
+    order: 4;
+  }
 }
 
 @media screen and (min-width: 425px) and (max-width: 767px) {
   main{  
     max-width: 480px;
   }
-  /*
-  #col-1 {
-    order: 2;
+  #box-1 {
+    order: 3;
   }
-  #col-2 {
-    order: 6;
-  }
-  #col-4 {
-    order: 1;
-  }
-  #col-6 {
-    order: 7;
-  }
-  #col-7 {
+  #box-3 {
     order: 4;
   }
-  */
 }
 @media screen and (max-width: 424px) {
   main {  
     max-width: 350px;
   }
-  /*
-  #col-1 {
-    order: 2;
+  #box-1 {
+    order: 3;
   }
-  #col-2 {
-    order: 6;
-  }
-  #col-4 {
-    order: 1;
-  }
-  #col-6 {
-    order: 7;
-  }
-  #col-7 {
+  #box-3 {
     order: 4;
   }
- */
 }
 
 .redError {

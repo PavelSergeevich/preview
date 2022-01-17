@@ -223,7 +223,7 @@ function Prices({ blok }) {
           </Col>         
         </Row>
         <Row>
-          <div className="main-form">
+          <div className="main-form"  id="price">
           <button
             className="priceButton"
             type="checkbox"

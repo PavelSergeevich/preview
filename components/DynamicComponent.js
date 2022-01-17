@@ -5,6 +5,8 @@ import Prices from './Prices'
 import Schedule from './Schedule'
 import DanceList from './DanceList'
 import Dance from './Dance'
+import About from './About'
+import Docs from './Docs'
 
 
 const Components = {
@@ -14,6 +16,8 @@ const Components = {
   'schedule': Schedule,
   'dance-list': DanceList,
   'dance': Dance,
+  'about': About,
+  'docs': Docs,
 }
 
 const DynamicComponent = ({ blok }) => {

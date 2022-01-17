@@ -19,6 +19,7 @@ module.exports = {
       ru: "ул. Университетская, 31",
       uk: "вул. Університетська, 31",
     },
+    FOOTER_EMAIL: "dikardistudio@gmail.com",
     FOOTER_CITY: {
       ru: "г. Харьков",
       uk: "м. Харків",
@@ -27,13 +28,21 @@ module.exports = {
       ru: "метро Майдан Конституции",
       uk: "метро Майдан Конституції",
     },
-    FOOTER_PHONE_RESOLVE: {
-      ru: "телефон:",
-      uk: "телефон:",
+    FOOTER_CONTACT_RESOLVE: {
+      ru: "контакты:",
+      uk: "контакти:",
     },
     FOOTER_ADRESS_RESOLVE: {
       ru: "адрес:",
       uk: "адреса:",
+    },
+    FOOTER_ABOUT: {
+      ru: "О нас",
+      uk: "О нас",
+    },
+    FOOTER_DOCS: {
+      ru: "Договор публичной оферты",
+      uk: "Договір публічної оферти",
     },
     HEADER_LANG: {
       ru: "RU",

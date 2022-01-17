@@ -8,44 +8,64 @@ const Footer = ({ locale, locales }) => {
   const defaultLocale = locale === "uk" ? "/" : `/${locale}/`;
 
   return (
-    <footer className="footer">  
-    <div className="max-size">    
+    <footer className="footer">
+      <div className="max-size">
         <Container className="footer-box">
           <Row className="row-footer">
             <Col xs={12} md={4} id="col-1">
-              <div className="main-form">              
-              <ul className="list-unstyled">
-                <li>
-                  <sup>{process.env.FOOTER_ADRESS_RESOLVE[locale]}</sup>
-                </li>
-                <li>
-                  <b className="h6">{process.env.FOOTER_CITY[locale]}</b>
-                </li>
-                <li id="footer">
-                  <b className="h6">{process.env.FOOTER_UNG[locale]}</b>
-                </li>
-                <li>
-                  <b className="h6">{process.env.FOOTER_ADRESS[locale]}</b>
-                </li>
-              </ul>
+              <div className="main-form">
+                <ul className="list-unstyled">
+                  <li>
+                    <sup>{process.env.FOOTER_ADRESS_RESOLVE[locale]}</sup>
+                  </li>
+                  <li>
+                    <b className="h6">{process.env.FOOTER_CITY[locale]}</b>
+                  </li>
+                  <li id="footer">
+                    <b className="h6">{process.env.FOOTER_UNG[locale]}</b>
+                  </li>
+                  <li>
+                    <b className="h6">{process.env.FOOTER_ADRESS[locale]}</b>
+                  </li>
+                </ul>
               </div>
             </Col>
             <Col xs={12} md={4} id="col-2">
-            <div className="main-form"> 
-              <ul className="list-unstyled">
+              <div className="main-form">
+                <ul className="list-unstyled">
                 <li>
-                  <sup>{process.env.FOOTER_PHONE_RESOLVE[locale]}</sup>
+                  <sup>{process.env.FOOTER_CONTACT_RESOLVE[locale]}</sup>
                 </li>
-                <li>
-                  <a href={`tel:${process.env.FOOTER_PHONE[0]}`} className="h6" id="tel">{process.env.FOOTER_PHONE[0]}</a>
-                </li>
-                <li>
-                  <a href={`tel:${process.env.FOOTER_PHONE[1]}`} className="h6" id="tel-mob">{process.env.FOOTER_PHONE[1]}</a>
-                </li>
-              </ul>
+                  <li>
+                    <a
+                      href={`tel:${process.env.FOOTER_PHONE[0]}`}
+                      className="h6"
+                      id="tel"
+                    >
+                      {process.env.FOOTER_PHONE[0]}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`tel:${process.env.FOOTER_PHONE[1]}`}
+                      className="h6"
+                      id="tel-mob"
+                    >
+                      {process.env.FOOTER_PHONE[1]}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={`mailto:${process.env.FOOTER_EMAIL}`}
+                      className="h6"
+                      id="tel-mob"
+                    >
+                      {process.env.FOOTER_EMAIL}
+                    </a>
+                  </li>
+                </ul>
               </div>
             </Col>
-            
             <Col xs={4} md={1} className="main-form" id="col-4">
               <Maps />
             </Col>
@@ -57,7 +77,7 @@ const Footer = ({ locale, locales }) => {
             </Col>
           </Row>
         </Container>
-        </div>
+      </div>
     </footer>
   );
 };

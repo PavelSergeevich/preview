@@ -16,6 +16,14 @@ https://dikardi.kharkiv.ua/ru/schedule
 https://www.dikardi.kharkiv.ua/ru/schedule
 https://dikardi.kharkiv.ua/uk/schedule
 https://www.dikardi.kharkiv.ua/uk/schedule
+https://dikardi.kharkiv.ua/ru/about
+https://www.dikardi.kharkiv.ua/ru/about
+https://dikardi.kharkiv.ua/uk/about
+https://www.dikardi.kharkiv.ua/uk/about
+https://dikardi.kharkiv.ua/ru/docs
+https://www.dikardi.kharkiv.ua/ru/docs
+https://dikardi.kharkiv.ua/uk/docs
+https://www.dikardi.kharkiv.ua/uk/docs
 https://dikardi.kharkiv.ua/ru/dances/pole
 https://www.dikardi.kharkiv.ua/ru/dances/pole
 https://dikardi.kharkiv.ua/uk/dances/pole
