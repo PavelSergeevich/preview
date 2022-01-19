@@ -9,28 +9,7 @@ const Docs = ({ blok }) => {
       <div className="bd-desc">
         <b className="h5 mt-3">{blok.title}</b>
       </div>
-      <div id="adobe-dc-view" className="pdf-embed"></div>
-      <Script
-        id="adobe-1"
-        strategy="beforeInteractive"
-        src="https://documentcloud.adobe.com/view-sdk/main.js"
-      />
-      <Script id="show-banner" strategy="lazyOnload">
-        {`document.addEventListener("adobe_dc_view_sdk.ready", function () {
-        var adobeDCView = new AdobeDC.View({
-          clientId: '6da6555e4bee4602a68a7e81c5b98f1d',
-          divId: "adobe-dc-view",
-        });
-        adobeDCView.previewFile(
-          {
-            content: { location: { url: blok.document.filename } },
-            metaData: { fileName: "dogovir_public.pdf" },
-          },
-          {
-            embedMode: "SIZED_CONTAINER",
-          });
-        });`}
-      </Script>
+
       <div className="mb-4">
         <iframe
           id="pdf"
