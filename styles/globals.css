@@ -116,7 +116,7 @@ ul li small#intro {
   color: #707070;
 }
 
-object {
+iframe#pdf {
   width: 100%;
   height: 800px;
 }

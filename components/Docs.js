@@ -10,10 +10,9 @@ const Docs = ({ blok }) => {
             <b className="h5 mt-3">{blok.title}</b>
           </div>
           <div className="mb-4">
-            <object
-              data={blok.document.filename}
-              type="application/pdf"
-            ></object>
+           
+              <iframe id="pdf" src={`https://docs.google.com/viewer?url=${blok.document.filename}&embedded=true`} frameBorder="0"></iframe>
+            
             <div className="btn-case">
             <a
             className="btn-blind"
