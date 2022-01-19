@@ -10,13 +10,10 @@ const Docs = ({ blok }) => {
             <b className="h5 mt-3">{blok.title}</b>
           </div>
           <div className="mb-4">
-            <iframe
-              src={blok.document.filename}
-              frameBorder="0"
-              scrolling="auto"
-              height={800}
-              width={884}
-            ></iframe>
+            <object
+              data={blok.document.filename}
+              type="application/pdf"
+            ></object>
             <div className="btn-case">
             <a
             className="btn-blind"
